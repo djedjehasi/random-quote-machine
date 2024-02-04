@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body .App{
+    height: 100vh;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 0.6fr 1.7fr 0.7fr; 
+    grid-template-rows: 0.5fr 1.5fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". Title ."
+      ". QuoteMachineArea ."
+      ". . ."; 
+}
+
+#title {
+    grid-area: Title;
+    text-align: center;
+}
+
+#quote-box {
+    grid-area: QuoteMachineArea;
+    margin: 50px;
+}
+
+#quote-text {
+    text-align: center;
+}
+
+#quote-author {
+    text-align: right;
+}

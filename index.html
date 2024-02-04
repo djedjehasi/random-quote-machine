@@ -6,6 +6,7 @@
   <title>single page react boilerplate</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="kokaneka">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -17,17 +18,20 @@
 
 const QuoteMachine = () => {
   return (
-    <h2>sssasa</h2>
+      <div id="quote-box">
+        <h2 id="quote-text">sssasa</h2>
+        <p id="quote-author">- sdsds</p>
+        <button>New Quote!</button>
+        </div>
+    
   )
 }
-
-
 
 //main APP
     const App = (props) => {
       return (
-        <div >
-          Hello Universe!
+        <div className="App">
+          <h1 id="title">Random Quote Machine:</h1>
           <QuoteMachine />
         </div>
       );
