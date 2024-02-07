@@ -16,16 +16,48 @@
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
   <script type="text/babel">
 
+
+const QUOTES = [
+
+['just pack around and find', 'someone smart(?)'],
+
+['nothing is stands infront of the really will', 'HAZAL']
+
+]
+
+const Results = () => {
+  let index =  Math.floor(Math.random() * QUOTES.length);
+
+  const handleClick = () => {
+    let newIndex = Math.floor(Math.random() * QUOTES.length);
+    while(newIndex === index){
+      newIndex = Math.floor(Math.random() * QUOTES.length);
+    }
+    index = newIndex;
+    console.log(index);
+  }
+  let quote = QUOTES[index][0];
+  let author = QUOTES[index][1];
+  return (
+    <div>
+      <h2 id="quote-text">{quote}</h2>
+      <h3 id="quote-author">{author}</h3>
+      <button onClick={handleClick}>new quote</button>
+    </div>
+  )
+}
+
+
 const QuoteMachine = () => {
   return (
       <div id="quote-box">
-        <h2 id="quote-text">sssasa</h2>
-        <p id="quote-author">- sdsds</p>
-        <button>New Quote!</button>
+        <Results />
+        <a href="" id="tweet-quote">tweet quote!</a>
         </div>
     
   )
 }
+
 
 //main APP
     const App = (props) => {
@@ -40,6 +72,17 @@ const QuoteMachine = () => {
             App(),
             document.getElementById('place-app')
         );
+
+
+    
+
+
+
+
+
+
+  
+
 
 
   </script>
