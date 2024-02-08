@@ -25,37 +25,34 @@ const QUOTES = [
 
 ]
 
-const Results = () => {
-  let index =  Math.floor(Math.random() * QUOTES.length);
 
-  const handleClick = () => {
+class QuoteMachine extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      index: Math.floor(Math.random() * QUOTES.length),
+    }
+  }
+  handleClick = () => {
     let newIndex = Math.floor(Math.random() * QUOTES.length);
-    while(newIndex === index){
+    while (this.state.index === newIndex){
       newIndex = Math.floor(Math.random() * QUOTES.length);
     }
-    index = newIndex;
-    console.log(index);
+    this.setState({
+      index: newIndex
+    });
+    console.log(this.state)
   }
-  let quote = QUOTES[index][0];
-  let author = QUOTES[index][1];
-  return (
-    <div>
-      <h2 id="quote-text">{quote}</h2>
-      <h3 id="quote-author">{author}</h3>
-      <button onClick={handleClick}>new quote</button>
-    </div>
-  )
-}
 
-
-const QuoteMachine = () => {
-  return (
-      <div id="quote-box">
-        <Results />
-        <a href="" id="tweet-quote">tweet quote!</a>
-        </div>
-    
-  )
+  render(){
+    return (
+      <div>
+        <h2>{QUOTES[this.state.index][0]}</h2>
+        <h3>{QUOTES[this.state.index][1]}</h3>
+        <button onClick={this.handleClick}>new quote</button>
+      </div>
+    )
+  }
 }
 
 

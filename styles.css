@@ -15,7 +15,6 @@ body .App{
 }
 
 #quote-box {
-    grid-area: QuoteMachineArea;
     margin: 50px;
 }
 
