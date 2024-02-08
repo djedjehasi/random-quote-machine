@@ -10,16 +10,23 @@ body .App{
 
 
 #title {
-    grid-area: Title;
     text-align: center;
 }
 
 #quote-box {
-    margin: 50px;
+    margin: 150px auto;
+    padding: 20px;
+    width: 450px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 #quote-text {
     text-align: center;
+    vertical-align: top;
 }
 
 #quote-author {
